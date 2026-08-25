@@ -1,5 +1,13 @@
 pub fn find_first_even(numbers: &[i32]) -> Option<i32> {
     // Your code here...
+    let mut found_number : Option<i32> = None;
+    for number in numbers.iter() {
+        if number % 2 == 0 {
+            found_number = Some(*number);
+            break;
+        }
+    }
+    found_number
 }
 
 // Example usage
