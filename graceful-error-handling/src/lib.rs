@@ -1,5 +1,16 @@
 pub fn parse_percentage(input: &str) -> Result<u8, String> {
     // TODO: Implement the function here
+    let parse_result = input.parse::<u8>();
+    if parse_result.is_ok() {
+        let number = parse_result.unwrap();
+        if number <= 100 {
+            Ok(number)
+        } else {
+            Err(String::from("Percentage out of range"))
+        }
+    } else {
+        Err(String::from("Invalid input"))
+    }
 }
 
 // Example usage
